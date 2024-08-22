@@ -55,4 +55,9 @@ jobs:
           python -m pip install -r requirements.txt
       
       - name: Run the tests
-        run: python -m unittest discover -s  tests -p '*_test.py'
+        run: |
+          if [ -d "tests" ]; then
+            python -m unittest discover -s tests -p '*_test.py'
+          else
+            echo "Tests directory not found"
+            exit 1
