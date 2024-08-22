@@ -61,3 +61,4 @@ jobs:
           else
             echo "Tests directory not found"
             exit 1
+          fi
